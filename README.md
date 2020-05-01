@@ -7,10 +7,10 @@ The experience of this app is simple. You can check out the demo by calling 503-
 ## Getting Started
 Can check out the demo by calling 503-455-7353. Follow the instructions below to import the script into your Twilio account for editing. 
 
-###Prerequisites
+### Prerequisites
 You’ll need a Twilio account and number to run this app. You’ll need access to Twilio studio, a basic understanding of JSON, and the ability to import JSON into Twilio studio. You’ll need basic access to an audio recorder and a server to host your own files. 
 
-###Installation and Story Editing 
+### Installation and Story Editing 
 
 * Download the JSON file in this Github repo to your computer. You’ll be uploading this to your Twilio account in Studio. 
 
@@ -24,7 +24,7 @@ You’ll need a Twilio account and number to run this app. You’ll need access 
 
 * You should now have a template project that you can use to build your own short story, or add your own branches. Just record your own audio, upload it to your server, and reference it in each Chapter module, or edit JSON file to update it with the location of your audio files. 
 
-###Deployment 
+### Deployment 
 Once you’re happy with your changes, click Publish, and go into All Products and Services >>> Phone Numbers. Register a number if you don’t already have one. Once you have a number, click the number itself to go into the number configuration. Scroll down to Voice and Fax. Under “A Call Comes In” Choose Studio Flow, and the title of your Studio Flow story. Press SAVE. 
 
 Call the number you set your story to, and you should be able to hear your story! If you don’t make any changes to the files within the JSON or Studio Flow, then you can listen to the stories in the example app. 
@@ -35,14 +35,14 @@ Call the number you set your story to, and you should be able to hear your story
 * [Twisted Wave](https://twistedwave.com/) - All audio files were recorded onto iPhones using TwistedWave, an high quality audio audio recorder and editor app.
 * [Audacity](https://www.audacityteam.org/) - Post-audio processing to get it to sound good over a telephone line. 
 
-Authors
+### Authors
 * Caseorganic - Initial coding work - [Caseorganic](http://www.caseorganic.com/) 
 * B. Greenstein - Initial concept - [manofsuit](https://github.com/manofsuit) 
 
-License
+### License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-Acknowledgments
+### Acknowledgments
 * Thanks to Twilio for the hackathon!
 * Thanks to B. Greenstein for the initial email that kicked this off a few weeks ago. 
 * Twilio studio! 
