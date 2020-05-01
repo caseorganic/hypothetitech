@@ -7,7 +7,10 @@ The experience of this app is simple. You can check out the demo by calling 503-
 This app was created at for the first Twilio x DEV community hackathon!
 
 ## Getting Started
-Can check out the demo by calling 503-455-7353. Follow the instructions below to import the script into your Twilio account for editing. 
+Can check out the demo by calling the number below. 
+
+## Test the app - Call 503-455-7353
+Follow the instructions below to import the script into your Twilio account for editing. 
 
 ### Prerequisites
 You’ll need a Twilio account and number to run this app. You’ll need access to Twilio studio, a basic understanding of JSON, and the ability to import JSON into Twilio studio. You’ll need basic access to an audio recorder and a server to host your own files. 
