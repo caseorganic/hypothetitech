@@ -4,6 +4,8 @@ Hypothetitech™ is a Twilio Studio Flow program that allows anyone to record th
 
 The experience of this app is simple. You can check out the demo by calling 503-455-7353.  
 
+This app was created at for the first Twilio x DEV community hackathon!
+
 ## Getting Started
 Can check out the demo by calling 503-455-7353. Follow the instructions below to import the script into your Twilio account for editing. 
 
@@ -36,8 +38,8 @@ Call the number you set your story to, and you should be able to hear your story
 * [Audacity](https://www.audacityteam.org/) - Post-audio processing to get it to sound good over a telephone line. 
 
 ### Authors
-* Caseorganic - Initial coding work - [Caseorganic](http://www.caseorganic.com/) 
-* B. Greenstein - Initial concept - [manofsuit](https://github.com/manofsuit) 
+* Caseorganic - Initial coding work, audio editing and voiceover - [Caseorganic](http://www.caseorganic.com/) 
+* B. Greenstein - Initial concept and voiceover - [manofsuit](https://github.com/manofsuit) 
 
 ### License
 This project is licensed under the MIT License - see the LICENSE.md file for details
