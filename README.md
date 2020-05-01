@@ -1,11 +1,11 @@
 # Hypothetitech - A Hypothetical Vacation App
 
-Hypothetitech™ is a Twilio Studio Flow script that allows anyone to record their own stories for loved ones. We’ve included a sample story 
+Hypothetitech™ is a Twilio Studio Flow program that allows anyone to record their own low-tech stories for loved ones that may not have access to a stable web connection. This Twilio experience allows listeners to simply call a number and experience a story. We’ve included a sample story to listen to for inspiration before they record their own story. 
 
-This Twilio experience allows listeners to simply call a number and experience a story.
+The experience of this app is simple. You can check out the demo by calling 503-455-7353.  
 
 ## Getting Started
-You can check out the demo by calling 503-455-7353. 
+Can check out the demo by calling 503-455-7353. Follow the instructions below to import the script into your Twilio account for editing. 
 
 ###Prerequisites
 You’ll need a Twilio account and number to run this app. You’ll need access to Twilio studio, a basic understanding of JSON, and the ability to import JSON into Twilio studio. You’ll need basic access to an audio recorder and a server to host your own files. 
