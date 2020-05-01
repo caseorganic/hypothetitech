@@ -1,0 +1,647 @@
+{
+  "description": "BETA 4 Ben's Night Trip Story",
+  "states": [
+    {
+      "name": "Trigger",
+      "type": "trigger",
+      "transitions": [
+        {
+          "event": "incomingMessage"
+        },
+        {
+          "next": "intro",
+          "event": "incomingCall"
+        },
+        {
+          "event": "incomingRequest"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": -890,
+          "y": -110
+        }
+      }
+    },
+    {
+      "name": "chapter-1",
+      "type": "gather-input-on-call",
+      "transitions": [
+        {
+          "next": "choice-1",
+          "event": "keypress"
+        },
+        {
+          "event": "speech"
+        },
+        {
+          "next": "chapter-1",
+          "event": "timeout"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/NightTrip1-WAV.wav",
+        "voice": "woman",
+        "number_of_digits": 1,
+        "speech_timeout": "auto",
+        "offset": {
+          "x": -780,
+          "y": 340
+        },
+        "loop": 1,
+        "finish_on_key": "",
+        "language": "en",
+        "stop_gather": true,
+        "gather_language": "en",
+        "profanity_filter": "true",
+        "timeout": 10
+      }
+    },
+    {
+      "name": "choice-1",
+      "type": "split-based-on",
+      "transitions": [
+        {
+          "event": "noMatch"
+        },
+        {
+          "next": "chapter-1-a",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 1",
+              "arguments": [
+                "{{widgets.chapter-1.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "next": "chapter-1-b",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 2",
+              "arguments": [
+                "{{widgets.chapter-1.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "input": "{{widgets.chapter-1.Digits}}",
+        "offset": {
+          "x": -170,
+          "y": 320
+        }
+      }
+    },
+    {
+      "name": "thank-you-end",
+      "type": "say-play",
+      "transitions": [
+        {
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/thank-you-recording.wav",
+        "voice": "alice",
+        "offset": {
+          "x": 140,
+          "y": 3080
+        },
+        "loop": 1,
+        "language": "en-AU"
+      }
+    },
+    {
+      "name": "chapter-1-b",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "chapter-2",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/NightTrip1B-WAV.wav",
+        "offset": {
+          "x": 60,
+          "y": 550
+        },
+        "loop": 1
+      }
+    },
+    {
+      "name": "chapter-1-a",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "chapter-2",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/NightTrip1A-WAV.wav",
+        "offset": {
+          "x": -310,
+          "y": 550
+        },
+        "loop": 1
+      }
+    },
+    {
+      "name": "call-management",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "record-voicemail",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/TEST-4-hospitality.wav",
+        "voice": "alice",
+        "offset": {
+          "x": -330,
+          "y": 2660
+        },
+        "loop": 1,
+        "language": "en-US"
+      }
+    },
+    {
+      "name": "record-voicemail",
+      "type": "record-voicemail",
+      "transitions": [
+        {
+          "next": "thank-you-end",
+          "event": "recordingComplete"
+        },
+        {
+          "event": "noAudio"
+        },
+        {
+          "event": "hangup"
+        }
+      ],
+      "properties": {
+        "transcribe": false,
+        "offset": {
+          "x": -460,
+          "y": 3050
+        },
+        "trim": "trim-silence",
+        "play_beep": "true",
+        "timeout": 7,
+        "max_length": 3600
+      }
+    },
+    {
+      "name": "chapter-2-b",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "chapter-3",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/05/NightTrip2B-DELAY.wav",
+        "offset": {
+          "x": 50,
+          "y": 1070
+        },
+        "loop": 1
+      }
+    },
+    {
+      "name": "choice-2",
+      "type": "split-based-on",
+      "transitions": [
+        {
+          "event": "noMatch"
+        },
+        {
+          "next": "chapter-2-a",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 1",
+              "arguments": [
+                "{{widgets.chapter-2.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "next": "chapter-2-b",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 2",
+              "arguments": [
+                "{{widgets.chapter-2.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "input": "{{widgets.chapter-2.Digits}}",
+        "offset": {
+          "x": -170,
+          "y": 840
+        }
+      }
+    },
+    {
+      "name": "chapter-2-a",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "chapter-3",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/05/NightTrip2A-DELAY.wav",
+        "offset": {
+          "x": -310,
+          "y": 1070
+        },
+        "loop": 1
+      }
+    },
+    {
+      "name": "choice-3",
+      "type": "split-based-on",
+      "transitions": [
+        {
+          "event": "noMatch"
+        },
+        {
+          "next": "chapter-3-a",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 1",
+              "arguments": [
+                "{{widgets.chapter-3.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "next": "chapter-3-b",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 2",
+              "arguments": [
+                "{{widgets.chapter-3.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "input": "{{widgets.chapter-3.Digits}}",
+        "offset": {
+          "x": -230,
+          "y": 1440
+        }
+      }
+    },
+    {
+      "name": "chapter-3-a",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "chapter-4",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/05/NightTrip3A-DELAY.wav",
+        "offset": {
+          "x": -320,
+          "y": 1660
+        },
+        "loop": 1
+      }
+    },
+    {
+      "name": "chapter-3-b",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "chapter-4",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/05/NightTrip3B-DELAY.wav",
+        "offset": {
+          "x": 60,
+          "y": 1660
+        },
+        "loop": 1
+      }
+    },
+    {
+      "name": "chapter-2",
+      "type": "gather-input-on-call",
+      "transitions": [
+        {
+          "next": "choice-2",
+          "event": "keypress"
+        },
+        {
+          "event": "speech"
+        },
+        {
+          "next": "chapter-2",
+          "event": "timeout"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/NightTrip2-WAV.wav",
+        "voice": "woman",
+        "number_of_digits": 1,
+        "speech_timeout": "auto",
+        "offset": {
+          "x": -790,
+          "y": 720
+        },
+        "loop": 1,
+        "finish_on_key": "",
+        "language": "en",
+        "stop_gather": true,
+        "gather_language": "en",
+        "profanity_filter": "true",
+        "timeout": 10
+      }
+    },
+    {
+      "name": "chapter-3",
+      "type": "gather-input-on-call",
+      "transitions": [
+        {
+          "next": "choice-3",
+          "event": "keypress"
+        },
+        {
+          "event": "speech"
+        },
+        {
+          "next": "chapter-3",
+          "event": "timeout"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/NightTrip3-WAV.wav",
+        "voice": "woman",
+        "number_of_digits": 1,
+        "speech_timeout": "auto",
+        "offset": {
+          "x": -820,
+          "y": 1170
+        },
+        "loop": 1,
+        "finish_on_key": "",
+        "language": "en",
+        "stop_gather": true,
+        "gather_language": "en",
+        "profanity_filter": "true",
+        "timeout": 10
+      }
+    },
+    {
+      "name": "bedtime-story",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "call-management",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/test4-amber-bedtime-story.wav",
+        "voice": "woman",
+        "offset": {
+          "x": 450,
+          "y": 2320
+        },
+        "loop": 1,
+        "language": "en-US"
+      }
+    },
+    {
+      "name": "chapter-4",
+      "type": "gather-input-on-call",
+      "transitions": [
+        {
+          "next": "message-or-story",
+          "event": "keypress"
+        },
+        {
+          "event": "speech"
+        },
+        {
+          "next": "chapter-4",
+          "event": "timeout"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/NightTrip4-WAV.wav",
+        "number_of_digits": 1,
+        "speech_timeout": "auto",
+        "offset": {
+          "x": -810,
+          "y": 2010
+        },
+        "loop": 1,
+        "finish_on_key": "#",
+        "stop_gather": true,
+        "gather_language": "en",
+        "profanity_filter": "true",
+        "timeout": 10
+      }
+    },
+    {
+      "name": "call-a-friend",
+      "type": "say-play",
+      "transitions": [
+        {
+          "next": "record-voicemail",
+          "event": "audioComplete"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/TEST-4-think-of-someone.wav",
+        "offset": {
+          "x": -690,
+          "y": 2660
+        },
+        "loop": 1
+      }
+    },
+    {
+      "name": "message-or-story",
+      "type": "split-based-on",
+      "transitions": [
+        {
+          "event": "noMatch"
+        },
+        {
+          "next": "call-a-friend",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 1",
+              "arguments": [
+                "{{widgets.chapter-4.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "next": "call-management",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 2",
+              "arguments": [
+                "{{widgets.chapter-4.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "next": "bedtime-story",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 3",
+              "arguments": [
+                "{{widgets.chapter-4.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "3"
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "input": "{{widgets.chapter-4.Digits}}",
+        "offset": {
+          "x": -730,
+          "y": 2320
+        }
+      }
+    },
+    {
+      "name": "Copy_of_choice-1",
+      "type": "split-based-on",
+      "transitions": [
+        {
+          "next": "intro",
+          "event": "noMatch"
+        },
+        {
+          "next": "chapter-1",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 1",
+              "arguments": [
+                "{{widgets.intro.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "next": "bedtime-story",
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value equal_to 2",
+              "arguments": [
+                "{{widgets.intro.Digits}}"
+              ],
+              "type": "equal_to",
+              "value": "2"
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "input": "{{widgets.intro.Digits}}",
+        "offset": {
+          "x": -1460,
+          "y": 400
+        }
+      }
+    },
+    {
+      "name": "intro",
+      "type": "gather-input-on-call",
+      "transitions": [
+        {
+          "next": "Copy_of_choice-1",
+          "event": "keypress"
+        },
+        {
+          "next": "intro",
+          "event": "speech"
+        },
+        {
+          "next": "intro",
+          "event": "timeout"
+        }
+      ],
+      "properties": {
+        "play": "http://chromogenic.com/wp-content/uploads/2020/04/TEST-4-amber-intro.wav",
+        "voice": "woman",
+        "number_of_digits": 1,
+        "speech_timeout": "auto",
+        "offset": {
+          "x": -1320,
+          "y": 120
+        },
+        "loop": 1,
+        "finish_on_key": "",
+        "language": "en",
+        "stop_gather": true,
+        "gather_language": "en",
+        "profanity_filter": "true",
+        "timeout": 10
+      }
+    }
+  ],
+  "initial_state": "Trigger",
+  "flags": {
+    "allow_concurrent_calls": true
+  }
+}
